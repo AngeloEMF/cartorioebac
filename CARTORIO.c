@@ -3,7 +3,7 @@
 #include <locale.h> //biblioteca de alocacao de texto por regiao 
 #include <string.h> // biblioteca responsavel por cuidar das string
 
-int main() //funçao principal (todo codigo em C precisa de uma funçao principal
+int main() //funçao principal (todo codigo em C precisa de uma funçao principal)
 {
 	int opcao=0; //definindo variavel
 	int x=1;
@@ -18,7 +18,8 @@ int main() //funçao principal (todo codigo em C precisa de uma funçao principal
 		printf("Escolha a opção no menu:\n\n");
 		printf("\t1 - Registar usuário\n");
 		printf("\t2 - Consultar usuário\n");
-		printf("\t3 - Deletar usuário\n\n");	
+		printf("\t3 - Deletar usuário\n");
+		printf("\t4 - Sair do sistema\n\n");	
 		printf("Opção: "); //fim do menu
 		
 		scanf("%d", &opcao); //escolha do usuario
@@ -28,15 +29,20 @@ int main() //funçao principal (todo codigo em C precisa de uma funçao principal
 		switch(opcao) //inicio da selecao de opcoes 
 		{
 			case 1:
-				registro(); //chama funçao registro
+			registro(); //chama funçao registro
 			break;
 			
 			case 2:
-				consulta(); //chama funçao consulta
+			consulta(); //chama funçao consulta
 			break;
 			
 			case 3:
-				deletar(); //chama funçao deletar
+			deletar(); //chama funçao deletar
+			break;
+			
+			case 4:
+			printf("Até logo!\n\n");
+			return 0;
 			break;
 			
 			default:
@@ -140,7 +146,7 @@ int consulta() //função de consulta
 		printf("\n\n");
 	}
 	
-	fclose(file); //fecha o arquivo, sempre que um arquivo for aberto, é essencial usar a funçao fclose(file) para fecha-lo depois	
+	fclose(file); //fecha o arquivo (sempre que um arquivo for aberto, é essencial usar a funçao fclose(file) para fecha-lo depois)	
 	system("pause");
 }
 
