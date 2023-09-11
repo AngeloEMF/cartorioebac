@@ -5,51 +5,78 @@
 
 int main() //funçao principal (todo codigo em C precisa de uma funçao principal)
 {
+	
 	int opcao=0; //definindo variavel
 	int x=1;
-	
+	char senhaacesso[10] = "a";
+	int comparacao; 
+
 	for(x=1;x=1;)
 	{
-		system("cls"); //limpa tela
 	
-		setlocale(LC_ALL, "Portuguese"); //definindo linguagem 
+		system ("cls");
 		
-		printf("\t### CARTÓRIO EBAC ###\n\n"); //inicio do menu
-		printf("Escolha a opção no menu:\n\n");
-		printf("\t1 - Registar usuário\n");
-		printf("\t2 - Consultar usuário\n");
-		printf("\t3 - Deletar usuário\n");
-		printf("\t4 - Sair do sistema\n\n");	
-		printf("Opção: "); //fim do menu
+		setlocale(LC_ALL, "Portuguese");
 		
-		scanf("%d", &opcao); //escolha do usuario
+		printf("\t### CARTÓRIO EBAC ###\n\n");
+		printf("Login de administrador\nDigite a senha: ");
+		scanf("%s", senhaacesso);
 		
-		system("cls"); //limpa tela
+		comparacao = strcmp(senhaacesso, "admin");
 		
-		switch(opcao) //inicio da selecao de opcoes 
+		if(comparacao == 0)
 		{
-			case 1:
-			registro(); //chama funçao registro
-			break;
+			system ("cls");
 			
-			case 2:
-			consulta(); //chama funçao consulta
-			break;
+			for(x=1;x=1;)
+			{
+				system("cls"); //limpa tela
 			
-			case 3:
-			deletar(); //chama funçao deletar
-			break;
-			
-			case 4:
-			printf("Até logo!\n\n");
-			return 0;
-			break;
-			
-			default:
-				printf("\tOpção inválida!\n\n");
-				system("pause");
-			break;		
-		} //fim da selecao de opcoes 
+				setlocale(LC_ALL, "Portuguese"); //definindo linguagem 
+				
+				printf("\t### CARTÓRIO EBAC ###\n\n"); //inicio do menu
+				printf("Escolha a opção no menu:\n\n");
+				printf("\t1 - Registar usuário\n");
+				printf("\t2 - Consultar usuário\n");
+				printf("\t3 - Deletar usuário\n");
+				printf("\t4 - Sair do sistema\n\n");	
+				printf("Opção: "); //fim do menu
+				
+				scanf("%d", &opcao); //escolha do usuario
+				
+				system("cls"); //limpa tela
+				
+				switch(opcao) //inicio da selecao de opcoes 
+				{
+					case 1:
+					registro(); //chama funçao registro
+					break;
+					
+					case 2:
+					consulta(); //chama funçao consulta
+					break;
+					
+					case 3:
+					deletar(); //chama funçao deletar
+					break;
+					
+					case 4:
+					printf("Até logo!\n");
+					return 0;
+					break;
+					
+					default:
+					printf("\tOpção inválida!\n\n");
+					system("pause");
+					break;		
+				} //fim da selecao de opcoes 
+			}
+		}	
+		else
+		{
+			printf("\nSenha incorreta!\n\n");
+			system("pause");
+		}
 	}
 }
 
